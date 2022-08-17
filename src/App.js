@@ -15,17 +15,23 @@ const App = () => {
 
   const ref = useRef();
 
-//   Store user input
+  //   Store user input
   const handleUserInput = (e) => {
     e.preventDefault();
     setUserInput(ref.current.value);
   };
 
-//   Find color codes within user input
+  //   Find color codes within user input
   useEffect(() => {
     const hslOrRgbArray = userInput.match(hslOrRgb);
     const hexArray = userInput.match(hex);
-    const colorNameArray = userInput.match(cssColorNames);
+    let colorNameArray = userInput.match(cssColorNames);
+
+    if (colorNameArray) {
+      colorNameArray = colorNameArray.map(
+        (e) => {return `${e.charAt(0).toUpperCase()}${e.slice(1)}`}
+      );
+    }
 
     let allColors = [];
     if (hslOrRgbArray) {
@@ -41,23 +47,23 @@ const App = () => {
     }
 
     if (allColors) {
+      // Remove Duplicates
+      let filteredColors = allColors.filter(
+        (item, index) => allColors.indexOf(item) === index
+      );
 
-    // Remove Duplicates
-      let filteredColors = allColors.filter((item, index) => allColors.indexOf(item) === index);
-      
       setUserColors(filteredColors);
     }
   }, [userInput]);
 
-  console.log(userColors);
-
+ 
   return (
     <main>
       <h1>CSS Color Variable Automatic Naming Tool</h1>
-    <InputCard ref={ref} handleUserInput={handleUserInput}/>
-    <ResultCard colors={userColors}/>
+      <InputCard ref={ref} handleUserInput={handleUserInput} />
+      <ResultCard colors={userColors} />
     </main>
-  )
-}
+  );
+};
 
 export default App;
