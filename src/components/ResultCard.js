@@ -1,14 +1,16 @@
-import { useEffect } from "react";
+import { useRef } from "react";
 import CopyBtn from "./CopyBtn";
 
 const ResultCard = ({ colors }) => {
+  const ref = useRef();
   const convert = require("color-convert");
 
   const hslColors = colors.filter((color) => color.startsWith("hsl"));
   const rgbColors = colors.filter((color) => color.startsWith("rgb"));
   const hexColors = colors.filter((color) => color.startsWith("#"));
+
   const cssColorNames = colors.filter((color) => {
-    return color[0] === color[0].toUpperCase();
+    return color[0] === color[0].toUpperCase() && color[0] !== "#";
   });
 
   let convertedColors = [];
@@ -93,22 +95,24 @@ const ResultCard = ({ colors }) => {
 
   if (cssColorNames.length) {
     cssColorNames.map((color) => {
-        let cssColor = color.toLowerCase(); 
+      let cssColor = color.toLowerCase();
       let convertedColor = convert.keyword.hsl(cssColor);
       let colorName = setColorName(convertedColor);
       let endConversion = `${colorName}: hsl(${convertedColor[0]}, ${convertedColor[1]}%, ${convertedColor[2]}%)`;
       return (convertedColors = [...convertedColors, endConversion]);
     });
   }
-
-  console.log(convertedColors);
+  const handleCopyText = () => {
+    let textToCopy = ref.current.innerText
+    navigator.clipboard.writeText(textToCopy); 
+  }
 
   return (
     <div>
       <p>Result:</p>
       <div>
-        <p styles={{ height: "500px" }}>
-          --root
+        <p styles={{ height: "500px" }} ref={ref}>
+          --root &#123;
           <br />
           {convertedColors.map((color) => {
             return (
@@ -118,8 +122,10 @@ const ResultCard = ({ colors }) => {
               </>
             );
           })}
+          <br />
+          &#125;
         </p>
-        <CopyBtn />
+        <CopyBtn copy={handleCopyText}/>
       </div>
     </div>
   );
