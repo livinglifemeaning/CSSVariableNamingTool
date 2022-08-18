@@ -109,9 +109,9 @@ const ResultCard = ({ colors }) => {
 
   return (
     <div>
-      <p>Result:</p>
-      <div>
-        <p styles={{ height: "500px" }} ref={ref}>
+      <p className="cardTitle">Result:</p>
+      <div className="card">
+        <p style={{padding: "1rem"}} ref={ref}>
           --root &#123;
           <br />
           {convertedColors.map((color) => {
@@ -125,8 +125,8 @@ const ResultCard = ({ colors }) => {
           <br />
           &#125;
         </p>
-        <CopyBtn copy={handleCopyText}/>
       </div>
+      <CopyBtn copy={handleCopyText}/>
     </div>
   );
 };

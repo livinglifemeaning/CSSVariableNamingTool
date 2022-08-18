@@ -60,8 +60,10 @@ const App = () => {
   return (
     <main>
       <h1>CSS Color Variable Automatic Naming Tool</h1>
+      <div className="flexContainer">
       <InputCard ref={ref} handleUserInput={handleUserInput} />
       <ResultCard colors={userColors} />
+      </div>
     </main>
   );
 };

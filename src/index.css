@@ -1,18 +1,107 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@600&family=Montserrat:wght@600;700&display=swap");
+* {
   box-sizing: border-box;
-  margin: 0; 
+  margin: 0;
+}
+body {
+  background-color: hsl(205, 30%, 11%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-main{
-  width: 100vw; 
-  height: 100vh; 
-  display: flex; 
-  flex-direction: column; 
-  padding: 2rem 10rem; 
-  gap: 2rem; 
+h1 {
+  font-size: 3rem;
+  font-family: "Montserrat";
+  max-width: 600px;
+  background: linear-gradient(
+    268.46deg,
+    #cba0af 8.23%,
+    #ffcccc 69.26%,
+    rgba(175, 107, 131, 0.71) 112.2%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%; 
+  margin-bottom: 2rem;
+  animation: Animation 5s ease infinite;
 }
 
-input{
-  width: 500px; 
-  height: 200px; 
+
+@keyframes Animation {
+  0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.cardTitle {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  background-color: #ffcccc;
+  font-family: "Hind Madurai";
+  border-radius: 15px;
+}
+textarea {
+  width: 300px;
+  height: 350px;
+  background-color: #ffcccc;
+  resize: none;
+  font-family: inherit;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+textarea:focus-visible {
+  outline: #d8adbc auto 1px;
+}
+
+.btn {
+  font-family: "Montserrat";
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #556077;
+  margin-top: 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none; 
+}
+
+.btn:active{
+  transform: scale(.98);
+}
+
+.flexContainer {
+  display: flex;
+  gap: 3rem;
+}
+
+@media (max-width: 600px) {
+  body {
+    display: block;
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .flexContainer {
+    flex-direction: column;
+  }
 }

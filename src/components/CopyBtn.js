@@ -1,6 +1,6 @@
 const CopyBtn = (props) =>{
     return (
-        <button onClick={props.copy}>Copy Variables</button>
+        <button onClick={props.copy} className="btn">Copy Variables</button>
     )
 }
 
