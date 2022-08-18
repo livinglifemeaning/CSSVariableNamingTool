@@ -12,6 +12,7 @@ The accepted color values are hsl, rgb, hex, and CSS color names. For now, all o
 I created this tool because I found it tedious to name the many CSS variables I've been working with recently. I am no master in color theory, and just decided which hue and brightness matches which color and brightness level by messing around with a color picker. If this tool is of any interest to others, and if anyone has any suggestions of how I can improve the naming logic or anything else about this app, I am open to this tool being contributed to! 
 
 #### Features I want to add 
+- make result card scrollable
 - throw error if user enters undefined color value
 - option to get rid of "-c" in the beginning of the color name 
 - options to keep orginal color values or convert to other than hsl in the result box
