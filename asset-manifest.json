@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/CSSVariableNamingTool/static/css/main.b1ddfd73.css",
-    "main.js": "/CSSVariableNamingTool/static/js/main.0532c8ba.js",
+    "main.js": "/CSSVariableNamingTool/static/js/main.8b2696ff.js",
     "index.html": "/CSSVariableNamingTool/index.html",
     "main.b1ddfd73.css.map": "/CSSVariableNamingTool/static/css/main.b1ddfd73.css.map",
-    "main.0532c8ba.js.map": "/CSSVariableNamingTool/static/js/main.0532c8ba.js.map"
+    "main.8b2696ff.js.map": "/CSSVariableNamingTool/static/js/main.8b2696ff.js.map"
   },
   "entrypoints": [
     "static/css/main.b1ddfd73.css",
-    "static/js/main.0532c8ba.js"
+    "static/js/main.8b2696ff.js"
   ]
 }
