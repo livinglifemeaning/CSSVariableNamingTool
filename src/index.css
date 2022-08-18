@@ -56,6 +56,8 @@ h1 {
   font-family: "Hind Madurai";
   border-radius: 15px;
   color: hsl(205, 30%, 11%); 
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 textarea {
   width: 300px;

@@ -54,7 +54,7 @@ const ResultCard = ({ colors }) => {
       } else if (color[2] <= 100) {
         brightness = "-light";
       }
-      colorName = colorName + firstPart + brightness + saturation;
+      colorName = colorName + firstPart + brightness + color[2] + "-" + saturation;
     }
 
     return colorName;
@@ -114,7 +114,7 @@ const ResultCard = ({ colors }) => {
         <p style={{padding: "1rem"}} ref={ref}>
           --root &#123;
           <br />
-          {convertedColors.map((color) => {
+          {convertedColors.sort().map((color) => {
             return (
               <>
                 <span>{color};</span>
@@ -122,7 +122,6 @@ const ResultCard = ({ colors }) => {
               </>
             );
           })}
-          <br />
           &#125;
         </p>
       </div>
