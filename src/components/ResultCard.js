@@ -16,7 +16,7 @@ const ResultCard = ({ colors }) => {
   let convertedColors = [];
 
   const setColorName = (color) => {
-    let colorName = "-c";
+    let colorName = "--c";
     if (color[0] === 0 && color[1] === 0 && color[2] === 0) {
       colorName = colorName + "-black";
     } else if (color[0] === 0 && color[1] === 0 && color[2] === 100) {
