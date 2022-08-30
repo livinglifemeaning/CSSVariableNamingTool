@@ -112,7 +112,7 @@ const ResultCard = ({ colors }) => {
       <p className="cardTitle">Result:</p>
       <div className="card">
         <p style={{padding: "1rem"}} ref={ref}>
-          --root &#123;
+          :root &#123;
           <br />
           {convertedColors.sort().map((color) => {
             return (
